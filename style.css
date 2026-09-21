@@ -1,0 +1,2235 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f7f3ea;
+    color: #304536;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 244, 195, 0.8),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #e8f1df 0%,
+            #f7f3ea 100%
+        );
+}
+
+
+.hero-content {
+    max-width: 800px;
+    padding: 30px;
+
+    animation: appear 1.5s ease;
+}
+
+
+.date {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+    color: #71836b;
+}
+
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+
+.hero-subtitle {
+    font-size: 22px;
+    font-style: italic;
+    color: #687766;
+    margin-bottom: 50px;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.start-button {
+    border: none;
+    background: #405b45;
+    color: white;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.start-button span {
+    margin-left: 10px;
+}
+
+.start-button:hover {
+    transform: translateY(-4px);
+    background: #304836;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #879181;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 35px;
+    margin-top: 10px;
+    background: #879181;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.section {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 25px;
+}
+
+.section-content {
+    max-width: 750px;
+    text-align: center;
+}
+
+
+.small-label {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #82917d;
+
+    margin-bottom: 25px;
+}
+
+
+.section h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+}
+
+
+.section p {
+    font-size: 20px;
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+    color: #627060;
+}
+
+
+.highlight {
+    font-size: 27px !important;
+    font-style: italic;
+    color: #405b45 !important;
+}
+
+
+/* =========================================
+   FLOR
+========================================= */
+
+.flower-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #e8f0df;
+}
+
+
+.flower-container {
+    height: 350px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-bottom: 70px;
+}
+
+
+.flower {
+    position: relative;
+
+    width: 160px;
+    height: 300px;
+}
+
+
+/* TALLO */
+
+.stem {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 8px;
+    height: 210px;
+
+    transform: translateX(-50%);
+
+    background: #557457;
+
+    border-radius: 10px;
+
+    transform-origin: bottom;
+
+    animation: growStem 2s ease forwards;
+}
+
+
+/* HOJAS */
+
+.leaf {
+    position: absolute;
+
+    width: 65px;
+    height: 30px;
+
+    background: #678568;
+
+    border-radius: 100% 0 100% 0;
+}
+
+
+.leaf-left {
+    bottom: 85px;
+    left: 20px;
+
+    transform: rotate(-25deg);
+}
+
+
+.leaf-right {
+    bottom: 130px;
+    right: 20px;
+
+    transform: rotate(205deg);
+}
+
+
+/* PÉTALOS */
+
+.petals {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 130px;
+    height: 130px;
+
+    transform: translateX(-50%);
+}
+
+
+.petals span {
+    position: absolute;
+
+    width: 65px;
+    height: 90px;
+
+    background: #f2c94c;
+
+    border-radius: 50%;
+
+    left: 32px;
+    top: 20px;
+
+    transform-origin: 50% 100%;
+
+    opacity: 0;
+
+    animation: bloom 1s ease forwards;
+}
+
+
+.petals span:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: 1.4s;
+}
+
+.petals span:nth-child(2) {
+    transform: rotate(60deg);
+    animation-delay: 1.5s;
+}
+
+.petals span:nth-child(3) {
+    transform: rotate(120deg);
+    animation-delay: 1.6s;
+}
+
+.petals span:nth-child(4) {
+    transform: rotate(180deg);
+    animation-delay: 1.7s;
+}
+
+.petals span:nth-child(5) {
+    transform: rotate(240deg);
+    animation-delay: 1.8s;
+}
+
+.petals span:nth-child(6) {
+    transform: rotate(300deg);
+    animation-delay: 1.9s;
+}
+
+
+/* CENTRO */
+
+.flower-center {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    background: #c99424;
+
+    border-radius: 50%;
+
+    top: 60px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   TEXTO DE FLOR
+========================================= */
+
+.flower-text {
+    max-width: 700px;
+}
+
+
+.flower-text h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+
+.flower-text p {
+    font-size: 19px;
+    line-height: 1.8;
+
+    color: #637261;
+}
+
+
+/* =========================================
+   CARTA - PAPEL REALISTA
+========================================= */
+
+.letter-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px;
+}
+
+.letter-wrapper {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* =========================================
+   HOJA
+========================================= */
+
+.letter-paper {
+    position: relative;
+
+    width: min(100%, 720px);
+
+    margin: 55px auto 0;
+
+    padding: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(120, 100, 60, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(120, 100, 60, 0.025) 1px,
+            transparent 1px
+        ),
+        #f5efdc;
+
+    background-size: 7px 7px;
+
+    color: #4d4739;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.28),
+        0 5px 12px rgba(0, 0, 0, 0.12);
+
+    transform:
+        rotate(-0.4deg);
+
+    overflow: hidden;
+
+    text-align: left;
+
+    animation:
+        letter-appear 1.2s ease-out both;
+}
+
+/* Borde irregular */
+
+.letter-paper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    border:
+        1px solid rgba(120, 100, 60, 0.16);
+
+    box-shadow:
+        inset 0 0 35px rgba(120, 100, 60, 0.07);
+}
+
+/* Textura */
+
+.letter-paper::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(100, 80, 40, 0.04),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(100, 80, 40, 0.035),
+            transparent 25%
+        );
+
+    opacity: 0.7;
+}
+
+/* =========================================
+   CABECERA
+========================================= */
+
+.letter-top {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 28px 55px 22px;
+
+    border-bottom:
+        1px solid rgba(100, 80, 40, 0.15);
+
+    font-family: sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #9b8554;
+
+    z-index: 2;
+}
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.letter-content {
+    position: relative;
+
+    padding: 45px 65px 35px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+
+    z-index: 2;
+}
+
+.letter-content p {
+    margin:
+        0 0 23px;
+}
+
+.letter-greeting {
+    font-size: 27px;
+
+    color: #65583f;
+
+    margin-bottom: 28px !important;
+}
+
+.letter-emphasis {
+    color: #96772b;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.letter-signature {
+    margin-top: 42px !important;
+
+    margin-bottom: 0 !important;
+
+    text-align: right;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #786743;
+}
+
+/* =========================================
+   PIE DE CARTA
+========================================= */
+
+.letter-footer {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 55px 28px;
+
+    border-top:
+        1px solid rgba(100, 80, 40, 0.12);
+
+    font-family: sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #a99a76;
+
+    z-index: 2;
+}
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes letter-appear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            rotate(-2deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-0.4deg);
+    }
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .letter-section {
+        padding: 90px 15px;
+    }
+
+    .letter-paper {
+        width: 100%;
+
+        margin-top: 35px;
+
+        transform: rotate(0deg);
+    }
+
+    .letter-top {
+        padding:
+            20px 22px 17px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .letter-content {
+        padding:
+            30px 25px 25px;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .letter-greeting {
+        font-size: 23px;
+    }
+
+    .letter-emphasis {
+        font-size: 16px;
+    }
+
+    .letter-signature {
+        font-size: 18px;
+    }
+
+    .letter-footer {
+        padding:
+            17px 22px 22px;
+
+        font-size: 8px;
+    }
+}
+
+@keyframes letter-appear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            rotate(-2deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-0.4deg);
+    }
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .letter-section {
+        padding: 90px 15px;
+    }
+
+    .letter-paper {
+        width: 100%;
+
+        margin-top: 35px;
+
+        transform: rotate(0deg);
+    }
+
+    .letter-top {
+        padding:
+            20px 22px 17px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .letter-content {
+        padding:
+            30px 25px 25px;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .letter-greeting {
+        font-size: 23px;
+    }
+
+    .letter-emphasis {
+        font-size: 16px;
+    }
+
+    .letter-signature {
+        font-size: 18px;
+    }
+
+    .letter-footer {
+        padding:
+            17px 22px 22px;
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================
+   DESEOS
+========================================= */
+
+.wishes-section {
+    min-height: 100vh;
+
+    padding: 120px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf3e8;
+}
+
+
+.wishes {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 60px;
+}
+
+
+.wish {
+    padding: 35px;
+
+    background: rgba(255,255,255,0.55);
+
+    border-radius: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.wish:hover {
+    transform: translateY(-7px);
+}
+
+
+.wish span {
+    display: block;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+
+.wish p {
+    font-size: 17px;
+    line-height: 1.6;
+
+    color: #627060;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #334c3b 0%,
+            #1d3025 100%
+        );
+
+    color: white;
+}
+
+
+.final-content {
+    max-width: 700px;
+}
+
+
+.final-flower {
+    font-size: 70px;
+
+    margin-bottom: 40px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+.final-section h2 {
+    font-size: clamp(35px, 5vw, 55px);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    margin-bottom: 30px;
+}
+
+
+.final-section p {
+    font-size: 24px;
+
+    font-style: italic;
+
+    margin-bottom: 60px;
+}
+
+
+.final-date {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 6px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes growStem {
+
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 210px;
+    }
+
+}
+
+
+@keyframes bloom {
+
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .letter {
+        padding: 50px 30px;
+    }
+
+    .wishes {
+        grid-template-columns: 1fr;
+    }
+
+    .flower-container {
+        transform: scale(0.85);
+    }
+
+}
+
+/* =========================================
+   DETALLES DEL JARDÍN
+========================================= */
+
+.tiny-flower {
+    font-size: 32px;
+    color: #e2b52f;
+    margin-bottom: 25px;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SISTEMA GLOBAL DE PÉTALOS
+========================================= */
+
+
+
+/* =========================================
+   PÉTALO QUE CAE
+========================================= */
+
+
+
+
+/* Caída */
+
+@keyframes petal-fall {
+
+    from {
+        transform:
+            translate3d(0, -50px, 0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(0, 110vh, 0)
+            rotate(360deg);
+    }
+
+}
+
+
+/* Movimiento lateral */
+
+@keyframes petal-sway {
+
+    0%,
+    100% {
+        margin-left: -25px;
+    }
+
+    50% {
+        margin-left: 25px;
+    }
+
+}
+
+
+/* =========================================
+   SUELO DE PÉTALOS
+========================================= */
+
+
+
+
+/* Algunos pétalos se ven parcialmente */
+
+.ground-petal:nth-child(3n) {
+    opacity: 0.7;
+}
+
+.ground-petal:nth-child(4n) {
+    transform: rotate(45deg);
+}
+
+.ground-petal:nth-child(5n) {
+    transform: rotate(-30deg);
+}
+
+
+/* =========================================
+   PÉTALOS QUE CAEN
+========================================= */
+
+.global-petals {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+}
+
+/* =========================================
+   PÉTALOS QUE YA CAYERON
+========================================= */
+
+.fallen-petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 4;
+    overflow: visible;
+}
+
+.fallen-petal {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    background: #f2c94c;
+    border-radius: 70% 30% 70% 30%;
+    opacity: 0.8;
+    transform-origin: center;
+    animation: petal-land 0.7s ease-out forwards;
+}
+
+@keyframes petal-land {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(-50px)
+            rotate(-30deg)
+            scale(0.7);
+    }
+
+    70% {
+        opacity: 0.9;
+        transform:
+            translateY(8px)
+            rotate(20deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform:
+            translateY(0)
+            rotate(35deg)
+            scale(1);
+    }
+}
+
+/* =========================================
+   PÉTALOS EN EL AIRE
+========================================= */
+
+.falling-petal {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    background: #f2c94c;
+    border-radius: 70% 30% 70% 30%;
+    opacity: 0.75;
+    pointer-events: none;
+
+    animation:
+        petal-fall linear forwards,
+        petal-sway ease-in-out infinite;
+}
+
+@keyframes petal-fall {
+
+    from {
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+}
+
+@keyframes petal-sway {
+
+    0% {
+        margin-left: -20px;
+    }
+
+    50% {
+        margin-left: 20px;
+    }
+
+    100% {
+        margin-left: -20px;
+    }
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .fallen-petal {
+        width: 9px;
+        height: 16px;
+        opacity: 0.7;
+    }
+
+    .falling-petal {
+        width: 9px;
+        height: 16px;
+    }
+}
+
+
+/* =========================================
+   ADAPTACIÓN A CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    
+   
+
+    .ground-petal {
+
+        width: 11px;
+        height: 8px;
+
+    }
+
+}
+
+/* =========================================
+   FINAL - PRIMAVERA
+========================================= */
+
+.final-label {
+    color: #d9b83f;
+    margin-bottom: 25px;
+}
+
+
+.final-flower {
+    font-size: 80px;
+
+    margin-bottom: 30px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 20px rgba(242, 201, 76, 0.35));
+}
+
+
+.spring-message {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-size: 22px !important;
+
+    line-height: 1.8;
+
+    color: #e7dfc8 !important;
+}
+
+
+.final-divider {
+    width: 50px;
+    height: 1px;
+
+    background: #d9b83f;
+
+    margin: 50px auto;
+}
+
+
+.romantic-message {
+    font-size: 21px !important;
+
+    line-height: 1.7;
+
+    color: #ddd5bd !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+.romantic-message.strong {
+    font-size: 28px !important;
+
+    color: #f2c94c !important;
+
+    font-style: italic;
+
+    max-width: 650px;
+
+    margin: 0 auto 55px auto !important;
+}
+
+/* =========================================
+   PÉTALOS QUE YA CAYERON
+========================================= */
+
+/* =========================================
+   FLORES QUE CRECEN CON EL SCROLL
+========================================= */
+
+.growing-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+    overflow: visible;
+}
+
+.growing-flower {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+    animation: flower-grow 0.8s ease-out forwards;
+    filter: drop-shadow(0 0 7px rgba(242, 201, 76, 0.25));
+}
+
+@keyframes flower-grow {
+
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-20deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.2) rotate(8deg);
+    }
+
+    100% {
+        opacity: 0.85;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .growing-flower {
+        font-size: 17px;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* =========================================
+   FOTO REVELADA SOBRE LA CARTA
+========================================= */
+
+.letter-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0 48px;
+    z-index: 5;
+
+    opacity: 0;
+    transform: translateY(25px) rotate(1.8deg);
+}
+
+.letter-photo.show {
+    animation: photo-reveal 1s ease-out forwards;
+}
+
+.photo-frame {
+    position: relative;
+
+    /*
+       La foto mantiene su proporción original.
+       No se fuerza una altura ni un aspect-ratio.
+    */
+    width: auto;
+    max-width: 72%;
+    
+    padding: 12px 12px 42px;
+
+    background: #fffdf7;
+
+    box-shadow:
+        0 18px 28px rgba(0, 0, 0, 0.22),
+        0 5px 10px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid rgba(80, 70, 50, 0.08);
+
+    transform: rotate(1.8deg);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+/* =========================================
+   CINTA ADHESIVA SOBRE LA FOTO
+========================================= */
+
+.photo-frame::before {
+    content: "";
+    position: absolute;
+
+    width: 78px;
+    height: 24px;
+
+    top: -11px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-4deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(238, 226, 187, 0.82),
+            rgba(255, 248, 215, 0.72),
+            rgba(225, 211, 168, 0.78)
+        );
+
+    border: 1px solid rgba(150, 135, 95, 0.12);
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.08);
+
+    opacity: 0.88;
+
+    z-index: 10;
+
+    /*
+       Bordes ligeramente irregulares
+       para que no parezca un rectángulo digital perfecto.
+    */
+    clip-path: polygon(
+        2% 8%,
+        98% 3%,
+        96% 92%,
+        3% 97%
+    );
+}
+
+/* Brillo muy sutil sobre el papel fotográfico */
+
+.photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.18),
+            transparent 35%
+        );
+
+    opacity: 0.7;
+
+    z-index: 2;
+}
+
+/* La fotografía real */
+.photo-frame img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 440px;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Texto escrito en la parte blanca inferior */
+.photo-note {
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+
+    text-align: center;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 13px;
+    color: #77705e;
+
+    transform: rotate(-1deg);
+
+    white-space: nowrap;
+}
+
+/* Efecto al pasar el mouse */
+.photo-frame:hover {
+    transform: rotate(0deg) translateY(-5px);
+
+    box-shadow:
+        0 24px 35px rgba(0, 0, 0, 0.25),
+        0 8px 15px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   ANIMACIÓN DE REVELADO
+========================================= */
+
+@keyframes photo-reveal {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            rotate(5deg)
+            scale(0.96);
+    }
+
+    60% {
+        opacity: 1;
+        transform:
+            translateY(-5px)
+            rotate(1deg)
+            scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            rotate(1.8deg)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 700px) {
+
+    .letter-photo {
+        margin: 32px 0 40px;
+    }
+
+    .photo-frame {
+        max-width: 78%;
+        padding: 9px 9px 34px;
+    }
+
+    .photo-frame img {
+        max-height: 360px;
+    }
+
+    .photo-note {
+        left: 9px;
+        right: 9px;
+        bottom: 8px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   MENSAJE SECRETO
+========================================= */
+
+.secret-section {
+    min-height: 65vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.secret-content {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* -----------------------------------------
+   BOTÓN DISCRETO
+----------------------------------------- */
+
+.secret-trigger {
+    appearance: none;
+    border: none;
+    background: transparent;
+
+    color: #a99f86;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-style: italic;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.secret-trigger::after {
+    content: " ✦";
+
+    color: #d9b83f;
+
+    opacity: 0.7;
+
+    transition: opacity 0.4s ease;
+}
+
+.secret-trigger:hover {
+    color: #e7dfc8;
+
+    transform: translateY(-2px);
+}
+
+.secret-trigger:hover::after {
+    opacity: 1;
+}
+
+
+/* -----------------------------------------
+   MENSAJE
+----------------------------------------- */
+
+.secret-message {
+    display: none;
+
+    opacity: 0;
+
+    padding: 20px;
+
+    animation: secret-reveal 1.2s ease-out forwards;
+}
+
+.secret-small {
+    display: block;
+
+    margin-bottom: 22px;
+
+    font-family: sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #9f957c;
+}
+
+.secret-message h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    color: #f2c94c;
+
+    text-shadow:
+        0 0 25px rgba(242, 201, 76, 0.15);
+}
+
+.secret-smile {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 24px;
+}
+
+
+/* -----------------------------------------
+   ANIMACIÓN
+----------------------------------------- */
+
+@keyframes secret-reveal {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.96);
+    }
+
+    60% {
+        opacity: 1;
+        transform:
+            translateY(-3px)
+            scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* -----------------------------------------
+   MÓVIL
+----------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .secret-section {
+        min-height: 55vh;
+
+        padding: 80px 20px;
+    }
+
+    .secret-trigger {
+        font-size: 15px;
+    }
+
+    .secret-small {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+}
+
+/* =========================================
+   CONTROL DE MÚSICA
+========================================= */
+
+.music-control {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+    transform: translateY(10px);
+}
+
+.music-control.visible {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+#musicButton {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(217, 184, 63, 0.45);
+
+    background: rgba(25, 35, 22, 0.75);
+
+    backdrop-filter: blur(8px);
+
+    color: #f2c94c;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#musicButton:hover {
+    transform: scale(1.08);
+
+    background: rgba(40, 50, 30, 0.9);
+
+    border-color: rgba(217, 184, 63, 0.8);
+}
+
+#musicStatus {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: rgba(25, 35, 22, 0.7);
+
+    backdrop-filter: blur(8px);
+
+    color: #cfc6ad;
+
+    font-family: sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateX(8px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.music-control:hover #musicStatus {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* -----------------------------------------
+   MÓVIL
+----------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .music-control {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    #musicButton {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+
+    #musicStatus {
+        display: none;
+    }
+}
+
+/* =========================================
+   JARDÍN FINAL
+========================================= */
+
+.final-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.final-garden {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+
+    pointer-events: none;
+
+    opacity: 0.75;
+}
+
+.final-garden span {
+    display: block;
+
+    font-size: 28px;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(242, 201, 76, 0.2)
+        );
+
+    animation: final-flower-float 4s ease-in-out infinite;
+}
+
+.garden-left {
+    left: 7%;
+}
+
+.garden-right {
+    right: 7%;
+}
+
+.garden-left span:nth-child(2),
+.garden-right span:nth-child(3) {
+    font-size: 36px;
+}
+
+.garden-left span:nth-child(3),
+.garden-right span:nth-child(2) {
+    font-size: 22px;
+}
+
+.garden-left span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.garden-left span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.garden-left span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.garden-right span:nth-child(1) {
+    animation-delay: 0.7s;
+}
+
+.garden-right span:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.garden-right span:nth-child(3) {
+    animation-delay: 1.7s;
+}
+
+.garden-right span:nth-child(4) {
+    animation-delay: 2.2s;
+}
+
+@keyframes final-flower-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+
+/* -----------------------------------------
+   MÓVIL
+----------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .final-garden {
+        gap: 35px;
+        opacity: 0.45;
+    }
+
+    .garden-left {
+        left: 1%;
+    }
+
+    .garden-right {
+        right: 1%;
+    }
+
+    .final-garden span {
+        font-size: 20px;
+    }
+
+    .garden-left span:nth-child(2),
+    .garden-right span:nth-child(3) {
+        font-size: 27px;
+    }
+}
+
+/* =========================================
+   SECCIÓN DE RECUERDOS
+========================================= */
+
+.memory-section {
+    min-height: 100vh;
+    padding: 120px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.memory-intro {
+    max-width: 650px;
+    margin-bottom: 65px;
+}
+
+.memory-intro h2 {
+    margin: 18px 0 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: normal;
+    color: #eee7d4;
+}
+
+.memory-intro p {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #aaa18d;
+}
+
+
+/* GALERÍA */
+
+.memory-gallery {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
+}
+
+
+/* FOTOS */
+
+.memory-photo {
+    position: relative;
+    width: 280px;
+    margin: 0;
+    padding: 10px 10px 34px;
+    background: #fffdf7;
+
+    box-shadow:
+        0 18px 30px rgba(0, 0, 0, 0.25),
+        0 4px 10px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+    transform: translateY(45px) scale(0.95);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    overflow: hidden;
+}
+
+.memory-photo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.memory-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 330px;
+    object-fit: contain;
+}
+
+
+/* INCLINACIONES */
+
+.memory-photo-1 {
+    transform: translateY(45px) rotate(-3deg) scale(0.95);
+}
+
+.memory-photo-2 {
+    transform: translateY(45px) rotate(2.5deg) scale(0.95);
+}
+
+.memory-photo-3 {
+    transform: translateY(45px) rotate(1.8deg) scale(0.95);
+}
+
+.memory-photo-4 {
+    transform: translateY(45px) rotate(-2.5deg) scale(0.95);
+}
+
+.memory-photo-1.show {
+    transform: translateY(0) rotate(-3deg) scale(1);
+}
+
+.memory-photo-2.show {
+    transform: translateY(0) rotate(2.5deg) scale(1);
+}
+
+.memory-photo-3.show {
+    transform: translateY(0) rotate(1.8deg) scale(1);
+}
+
+.memory-photo-4.show {
+    transform: translateY(0) rotate(-2.5deg) scale(1);
+}
+
+
+/* PEQUEÑO EFECTO AL PASAR EL MOUSE */
+
+.memory-photo:hover {
+    z-index: 5;
+    transform: translateY(-8px) rotate(0deg) scale(1.03);
+    box-shadow:
+        0 25px 40px rgba(0, 0, 0, 0.30),
+        0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* CONTINUACIÓN */
+
+.memory-continue {
+    margin-top: 75px;
+    text-align: center;
+}
+
+.memory-continue p {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #d6cdb7;
+}
+
+.memory-continue span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    color: #8f8775;
+}
+
+.memory-arrow {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #d9b83f;
+    opacity: 0.7;
+    animation: memory-arrow-float 2s ease-in-out infinite;
+}
+
+@keyframes memory-arrow-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(7px);
+        opacity: 1;
+    }
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .memory-section {
+        padding: 90px 15px 80px;
+    }
+
+    .memory-intro {
+        margin-bottom: 45px;
+    }
+
+    .memory-intro h2 {
+        font-size: 30px;
+    }
+
+    .memory-intro p {
+        font-size: 15px;
+    }
+
+    .memory-gallery {
+        gap: 25px;
+    }
+
+    .memory-photo {
+        width: min(43vw, 190px);
+        padding: 7px 7px 25px;
+    }
+
+    .memory-photo img {
+        max-height: 240px;
+    }
+
+    .memory-continue {
+        margin-top: 55px;
+    }
+
+    .memory-continue p {
+        font-size: 19px;
+    }
+
+    .memory-continue span {
+        font-size: 14px;
+    }
+}
